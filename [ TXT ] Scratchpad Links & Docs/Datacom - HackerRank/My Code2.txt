@@ -1,0 +1,17 @@
+SELECT      ID, NAME, MONTHS, HACKOS, (MONTHS * HACKOS)
+FROM        HACKER
+WHERE       MONTHS < 10
+AND         (MONTHS * HACKOS) > 100
+ORDER BY    ID ASC
+
+
+FINAL:
+
+/*
+Enter your query here.
+*/
+SELECT      NAME
+FROM        HACKER
+WHERE       MONTHS < 10
+AND         (MONTHS * HACKOS) > 100
+ORDER BY    ID ASC

@@ -1,0 +1,11 @@
+C:\Dev\MaxArraySumTest\bin\Debug\netcoreapp3.0\MaxArraySumTest.exe
+C:\Dev\MaxArraySumTest\bin\Debug\netcoreapp3.0\MaxArraySumTest.deps.json
+C:\Dev\MaxArraySumTest\bin\Debug\netcoreapp3.0\MaxArraySumTest.runtimeconfig.json
+C:\Dev\MaxArraySumTest\bin\Debug\netcoreapp3.0\MaxArraySumTest.runtimeconfig.dev.json
+C:\Dev\MaxArraySumTest\bin\Debug\netcoreapp3.0\MaxArraySumTest.dll
+C:\Dev\MaxArraySumTest\bin\Debug\netcoreapp3.0\MaxArraySumTest.pdb
+C:\Dev\MaxArraySumTest\obj\Debug\netcoreapp3.0\MaxArraySumTest.csprojAssemblyReference.cache
+C:\Dev\MaxArraySumTest\obj\Debug\netcoreapp3.0\MaxArraySumTest.AssemblyInfoInputs.cache
+C:\Dev\MaxArraySumTest\obj\Debug\netcoreapp3.0\MaxArraySumTest.AssemblyInfo.cs
+C:\Dev\MaxArraySumTest\obj\Debug\netcoreapp3.0\MaxArraySumTest.dll
+C:\Dev\MaxArraySumTest\obj\Debug\netcoreapp3.0\MaxArraySumTest.pdb

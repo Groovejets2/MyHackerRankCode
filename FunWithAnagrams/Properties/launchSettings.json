@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "FunWithAnagrams": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "OUTPUT_PATH": "C:\\Dev\\HackerRank\\FunWithAnagrams\\resultlog.txt",
+        "INPUT_PATH": "C:\\Dev\\HackerRank\\FunWithAnagrams\\test01.txt"
+      }
+    }
+  }
+}

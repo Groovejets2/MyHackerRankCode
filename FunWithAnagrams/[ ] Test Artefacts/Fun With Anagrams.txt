@@ -1,0 +1,241 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+
+
+class Result
+{
+
+    /*
+     * Complete the 'funWithAnagrams' function below.
+     *
+     * The function is expected to return a STRING_ARRAY.
+     * The function accepts STRING_ARRAY s as parameter.
+     */
+
+    public static List<string> funWithAnagrams(List<string> s)
+    {
+        List<string> returnList = new List<string>(s);
+        List<string> removeList = new List<string>();
+
+        //Loop through each word in the master words list
+        foreach(string word1 in s)
+        {
+            //-------------------------------------------------
+            var isAnagram = false;
+            var matchWord = string.Empty;
+            var words = new List<string>(s);
+            //-------------------------------------------------
+            words.RemoveAt(words.IndexOf(word1)); //Clone master word list and remove this word
+            foreach(string word2 in words)
+            {
+                if(isThisAnAnagram(word1, word2))
+                {
+                    isAnagram = true;
+                    matchWord = word2;
+                    continue;
+                }                
+            }
+            if(isAnagram)
+            {
+                removeList.Add(word1);
+            }
+            //-------------------------------------------------
+        }
+        return removeList;
+    }
+
+
+    private static List<string> removeWordsFromList(List<string> words, string word1, string word2)
+    {
+        words.RemoveAt(words.IndexOf(word1));
+        words.RemoveAt(words.IndexOf(word2));
+
+        return words;
+    } 
+
+    private static bool isThisAnAnagram(string word1, string word2)
+    {
+        int word1charCount = word1.Length;
+        if(word1.Length != word2.Length)
+            return false;
+
+        var word2RemCount = 0;
+        //LOOP: Through each character in word 1
+        foreach(char c1 in word1)
+        {
+            //LOOP: Through each character in word 2
+            foreach(char c2 in word2)
+            {
+                //CHECK: Is letter in word2? If true remove it ELSE if false return false immediatley
+                if(c1 != c2)
+                    continue;
+                word2.Remove(word2.IndexOf(c1), 1);
+                word2RemCount++;
+            }
+        }
+        //CHECK: Does removal count match total count?
+        if(word1charCount != word2RemCount)
+            return false;
+        return true;
+    }
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int sCount = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<string> s = new List<string>();
+
+        for (int i = 0; i < sCount; i++)
+        {
+            string sItem = Console.ReadLine();
+            s.Add(sItem);
+        }
+
+        List<string> result = Result.funWithAnagrams(s);
+
+        textWriter.WriteLine(String.Join("\n", result));
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
+
+
+
+
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+
+
+class Result
+{
+
+    /*
+     * Complete the 'funWithAnagrams' function below.
+     *
+     * The function is expected to return a STRING_ARRAY.
+     * The function accepts STRING_ARRAY s as parameter.
+     */
+
+    public static List<string> funWithAnagrams(List<string> s)
+    {
+        List<string> returnList = new List<string>(s);
+        List<string> removeList = new List<string>();
+
+        //Loop through each word in the master words list
+        foreach(string word1 in s)
+        {
+            //-------------------------------------------------
+            var isAnagram = false;
+            var matchWord = string.Empty;
+            var words = new List<string>(s);
+            //-------------------------------------------------
+            words.RemoveAt(words.IndexOf(word1)); //Clone master word list and remove this word
+            foreach(string word2 in words)
+            {
+                if(isThisAnAnagram(word1, word2))
+                {
+                    isAnagram = true;
+                    matchWord = word2;
+                    continue;
+                }                
+            }
+            if(isAnagram)
+            {
+                removeList.Add(word1);
+            }
+            //-------------------------------------------------
+        }
+        return removeList;
+    }
+
+
+    private static List<string> removeWordsFromList(List<string> words, string word1, string word2)
+    {
+        words.RemoveAt(words.IndexOf(word1));
+        words.RemoveAt(words.IndexOf(word2));
+
+        return words;
+    } 
+
+    private static bool isThisAnAnagram(string word1, string word2)
+    {
+        int word1charCount = word1.Length;
+        if(word1.Length != word2.Length)
+            return false;
+
+        var word2RemCount = 0;
+        //LOOP: Through each character in word 1
+        foreach(char c1 in word1)
+        {
+            //LOOP: Through each character in word 2
+            foreach(char c2 in word2)
+            {
+                //CHECK: Is letter in word2? If true remove it ELSE if false return false immediatley
+                if(c1 != c2)
+                    continue;
+                word2.Remove(word2.IndexOf(c1), 1);
+                word2RemCount++;
+            }
+        }
+        //CHECK: Does removal count match total count?
+        if(word1charCount != word2RemCount)
+            return false;
+        return true;
+    }
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int sCount = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<string> s = new List<string>();
+
+        for (int i = 0; i < sCount; i++)
+        {
+            string sItem = Console.ReadLine();
+            s.Add(sItem);
+        }
+
+        List<string> result = Result.funWithAnagrams(s);
+
+        textWriter.WriteLine(String.Join("\n", result));
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
+
